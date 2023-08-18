@@ -21,7 +21,6 @@
 		3BE25B282A1CEEC50011D684 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE25B272A1CEEC50011D684 /* CoursesViewController.swift */; };
 		3BE602322A30899E00D4398C /* ArticleListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE602312A30899E00D4398C /* ArticleListCollectionViewCell.swift */; };
 		3BE602342A30AAA900D4398C /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE602332A30AAA900D4398C /* Blog.swift */; };
-		3BE602362A30ABFB00D4398C /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE602352A30ABFA00D4398C /* APICall.swift */; };
 		5155A88891187F7FE7A177FF /* Pods_BlogHorizon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112BBBB26594D97D7DDECDAB /* Pods_BlogHorizon.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		3BE25B272A1CEEC50011D684 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		3BE602312A30899E00D4398C /* ArticleListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCollectionViewCell.swift; sourceTree = "<group>"; };
 		3BE602332A30AAA900D4398C /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
-		3BE602352A30ABFA00D4398C /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		A0D860CB854F2DA07B17E69B /* Pods-Dashboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dashboard.debug.xcconfig"; path = "Target Support Files/Pods-Dashboard/Pods-Dashboard.debug.xcconfig"; sourceTree = "<group>"; };
 		A32A45229B95E1ED9C4759E5 /* Pods-BlogHorizon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogHorizon.release.xcconfig"; path = "Target Support Files/Pods-BlogHorizon/Pods-BlogHorizon.release.xcconfig"; sourceTree = "<group>"; };
 		E45DDD8087F87334CFE64F80 /* Pods-BlogHorizon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogHorizon.debug.xcconfig"; path = "Target Support Files/Pods-BlogHorizon/Pods-BlogHorizon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 			children = (
 				3BE25B0D2A1CE9DC0011D684 /* AppDelegate.swift */,
 				3BE25B0F2A1CE9DC0011D684 /* SceneDelegate.swift */,
-				3BE602352A30ABFA00D4398C /* APICall.swift */,
 				3BE602292A3088F100D4398C /* Feed */,
 				3BE25B112A1CE9DC0011D684 /* ProfileViewController.swift */,
 				3BE25B272A1CEEC50011D684 /* CoursesViewController.swift */,
@@ -271,7 +268,6 @@
 			files = (
 				3BE25B222A1CEE6F0011D684 /* MembersViewController.swift in Sources */,
 				3BE25B282A1CEEC50011D684 /* CoursesViewController.swift in Sources */,
-				3BE602362A30ABFB00D4398C /* APICall.swift in Sources */,
 				3BC0842E2A31FEA5004F9560 /* ArticleListViewController.swift in Sources */,
 				3BE25B122A1CE9DC0011D684 /* ProfileViewController.swift in Sources */,
 				3BE25B242A1CEE990011D684 /* FeedViewController.swift in Sources */,
