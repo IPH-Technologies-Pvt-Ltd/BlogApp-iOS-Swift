@@ -74,15 +74,6 @@ class ArticleListViewController: UIViewController {
             label.attributedText = attributedString
         }
     }
-    //for formatting the blog image url fetched from the API
-    func stringFormatter(blogRelatedUrl: String) -> String{
-        let start = blogRelatedUrl.index(blogRelatedUrl.startIndex, offsetBy: 8)
-        let end = blogRelatedUrl.index(blogRelatedUrl.startIndex, offsetBy: blogRelatedUrl.count-3)
-        let range = start...end
-        let newBlogRelatedURLFetched = String(blogRelatedUrl[range])
-        print(newBlogRelatedURLFetched)
-        return newBlogRelatedURLFetched
-    }
 }
 
 extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewDataSource{
