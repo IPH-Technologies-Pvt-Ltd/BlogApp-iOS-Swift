@@ -14,6 +14,7 @@ class ArticleListViewController: UIViewController {
     
     // MARK: Variables
     var blogList = [BlogDetailModel]()
+    var blogImageListArray = [BlogFeaturedImgURL]()
     let dateFormatter = DateFormatter()
     var estimatedReadingTime: Int?
     let deviceType = UIDevice().name
@@ -22,13 +23,13 @@ class ArticleListViewController: UIViewController {
         super.viewDidLoad()
         articleListCollectionView.dataSource = self
         articleListCollectionView.delegate = self
-        let anonymousFunction = {(fetchedBlogDetail: [BlogDetailModel]) in
-            DispatchQueue.main.async {
-                self.blogList = fetchedBlogDetail
-                self.articleListCollectionView.reloadData()
-            }
-        }
-        APICall.shared.fetchDataFromApi(onCompletion: anonymousFunction)
+        // Append the instances to the blogList array
+        blogList.append(firstBlog)
+        blogList.append(secondBlog)
+        blogList.append(thirdBlog)
+        blogList.append(fourthBlog)
+        blogList.append(fifthBlog)
+        blogImageListArray = BlogFeaturedImgURL.defaultBlogImageList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,11 +106,7 @@ extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewD
         estimatedReadingTime = Int(ceil(Double(round(time * 100) / 100)*60.0))
         cell.estimatedTimeToReadBlogLabel.text = "\(estimatedReadingTime!) sec for reading"
         timeToReadBlog(boldText: "\(estimatedReadingTime!) sec", normalText: " for reading", label: cell.estimatedTimeToReadBlogLabel)
-        //print("\(blogList[indexPath.row].blogFeaturedImgURL)")
-        let blogImageUrlFetched = "\(blogList[indexPath.row].blogFeaturedImgURL)"
-        if let url = URL(string: "\(stringFormatter(blogRelatedUrl: blogImageUrlFetched))"){
-            cell.blogImageView?.loadImage(from: url)
-        }
+        cell.blogImageView.image = UIImage(named: blogImageListArray[indexPath.row].blogImageName)
         cell.heroID = nil
         return cell
     }
@@ -120,14 +117,10 @@ extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewD
         if let vc = storyboard?.instantiateViewController(identifier: "ArticleDetailViewController") as? ArticleDetailViewController {
             let cell = articleListCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ArticleListCollectionViewCell
             let blogDetailsFetched = blogList[indexPath.row]
-            let blogImgURLFetched = "\(blogList[indexPath.row].blogFeaturedImgURL)"
-            if let url = URL(string: "\(stringFormatter(blogRelatedUrl: blogImgURLFetched))"){
-                vc.url = url
-                vc.shareBlogUrl = URL(string: "\(String(describing: blogList[indexPath.row].blogURL!))")
-         }
+            vc.imageReceived =  UIImage(named: blogImageListArray[indexPath.row].blogImageName)!
+            vc.shareBlogUrl = URL(string: "\(String(describing: blogList[indexPath.row].blogURL!))")
             vc.titleOfBlog = blogDetailsFetched.blogTitle
             vc.contentBlog = blogDetailsFetched.blogContent
-            //print(blogDetailsFetched.blogContent)
             vc.date = dateFormat(dateFetched: blogDetailsFetched.blogDate!)
             cell.heroID = "animTransition"
             showHero(vc)

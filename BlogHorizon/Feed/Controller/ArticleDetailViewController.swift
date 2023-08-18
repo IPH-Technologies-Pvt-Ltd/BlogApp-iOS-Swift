@@ -31,14 +31,15 @@ class ArticleDetailViewController: UIViewController {
     var contentBlog: String?
     var date: String?
     var shareBlogUrl: URL?
+    var imageReceived = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async { [self] in
-            self.blogDetailImageView?.loadImage(from: url!)
             self.view.heroID = "animTransition"
             self.headingLabel.text = self.titleOfBlog?.capitalized
             self.dateLabel.text = self.date
+            self.blogDetailImageView.image = imageReceived
         }
         setupUI()
         displayBlogContentInWebView()
